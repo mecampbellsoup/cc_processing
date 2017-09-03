@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+input_file_path = ARGV[0]
+
+lib_path = File.expand_path('../../lib', __FILE__)
+$:.unshift lib_path
+
+require 'credit_card_processing'
+summary = CreditCardProcessing::Runner.new(input_file_path).summarize
+formatted_summary = "#{summary.join("\n")}\n"
+print(formatted_summary)
