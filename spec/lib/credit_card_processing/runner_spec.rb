@@ -3,7 +3,8 @@ require 'spec_helper'
 module CreditCardProcessing
   RSpec.describe Runner do
     let(:input_file_path) { File.expand_path("../../../fixtures/input.txt", __FILE__) }
-    subject(:runner) { described_class.new(input_file_path) }
+    let(:inputs) { File.read(input_file_path) }
+    subject(:runner) { described_class.new(inputs) }
 
     describe "#summarize" do
       subject { runner.summarize }

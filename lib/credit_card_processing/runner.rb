@@ -1,7 +1,7 @@
 module CreditCardProcessing
   class Runner
-    def initialize(input_file_path)
-      @input_file_path = input_file_path
+    def initialize(inputs)
+      @inputs = inputs
       @cardholder_names = []
     end
 
@@ -24,12 +24,8 @@ module CreditCardProcessing
       end
     end
 
-    def input_file
-      File.read(@input_file_path)
-    end
-
     def process_transactions!
-      input_file.each_line do |line|
+      @inputs.each_line do |line|
         activity = Activity.new(line)
         activity.save
         # Array#| joins the two arrays, excluding any duplicates.

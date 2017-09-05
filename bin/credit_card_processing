@@ -1,11 +1,16 @@
 #!/usr/bin/env ruby
 
-input_file_path = ARGV[0]
+# Read the input file
+input_file_contents = ARGF.read
 
+# Require the CC processing lib
 lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift lib_path
-
 require 'credit_card_processing'
-summary = CreditCardProcessing::Runner.new(input_file_path).summarize
+
+# Process the inputs via the lib
+summary = CreditCardProcessing::Runner.new(input_file_contents).summarize
+
+# Print formatted summary of the results
 formatted_summary = "#{summary.join("\n")}\n"
 print(formatted_summary)
