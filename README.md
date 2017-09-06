@@ -20,8 +20,16 @@ I am most familiar with Ruby and feel very comfortable writing "proper", test-dr
 
 ## How to run the code and tests
 
+### From archive file
 1. Locate the archive file `cc_processing.zip` (sent as email attachment to Braintree).
 1. Unarchive the source code: `unzip cc_processing.zip`
+1. Move into the library directory: `cd cc_processing`
+1. `bundle install` to setup dependencies
+1. To run the program: `bin/credit_card_processing spec/fixtures/input.txt`, or `bin/credit_card_processing < spec/fixtures/input.txt`.
+1. To run the tests: `bin/rspec` or `bundle exec rspec`
+
+### From source
+1. Clone this repo: `git clone git@github.com:mecampbellsoup/cc_processing.git`
 1. Move into the library directory: `cd cc_processing`
 1. `bundle install` to setup dependencies
 1. To run the program: `bin/credit_card_processing spec/fixtures/input.txt`, or `bin/credit_card_processing < spec/fixtures/input.txt`.
